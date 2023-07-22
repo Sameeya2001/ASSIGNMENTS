@@ -1,0 +1,148 @@
+#Q1.Print the list of numbers which are divisible by 5 and multiples of 8 between 2000 and 2500.
+
+l=[]
+for i in range(2000,2501):
+    if (i%5==0) and (i%8==0):
+        l.append(i)
+print(l)
+
+#Q2.Write a python program for create the table (from 1-10) of a number getting input from the user.
+
+num=int(input("Enter the number:"))
+limit=int(input("Enter the limit of the table:"))
+for i in range(1,limit+1):
+    product=num*i
+    print(f"{num} * {i} = :",product)
+
+#Q.3Sort the list in ascending order and print the list.
+
+user_input = input("Enter a list of numbers separated by spaces: ")
+user_list = [int(num) for num in user_input.split()]
+(user_list.sort())
+print(user_list)
+print("The first element after sorted:",user_list[0])
+
+#Q.4python program to find the second largest element of a list.
+
+input=input("Enter the elements with space:")
+list=[int(num) for num in input.split()]
+list.sort()
+reversed_list=list[::-1]
+print("The second largest element from the list=",reversed_list[1])
+
+#Q.5 python program to print  odd numbers &  even numbers seperately in a list of [1,2,3,4,5,6,7,8,9,10]
+
+even=[]
+odd=[]
+number_list=[1,2,3,4,5,6,7,8,9,10]
+for i in range(0,11):
+   if i%2==0:
+    even.append(i)
+   else:
+    odd.append(i)
+print("even numbers",even)
+print("odd numbers",odd)
+
+#Q.6 program for reverse a list.
+
+elements=input("Enter the elements seperated by spaces:")
+list=[int(num) for num in elements.split()]
+reversed_list=list[ ::-1]
+print("Reversed list:",reversed_list)
+
+
+#Q.7 Program to print all odd numbers from 1-50
+odd=[]
+for i in range(1,51):
+    if i%2!=0:
+      odd.append(i)
+print("the odd numbers in the given range.",odd)
+
+
+#Q.8 Program to count odd and even numbers in a list.
+
+evencount=0
+oddcount=0
+input=(input("Enter the number of elements without spaces:"))
+list=[int(num)for num in input.split()]
+for numbers in list:
+    if numbers%2==0:
+        evencount+=1
+    else:
+        oddcount+=1
+print("The count of even numbers:",evencount)
+print("The count of odd numbers:",oddcount)
+
+#Q.9 write a python program to remove all zeros from an IP address ("216.08.094.196").
+
+input=input("Enter the IP Address:")
+parts=input.split(".")
+parts=[int(part) for part in parts] #generating integers
+parts=[str(part) for part in parts] #generating string
+without_zeros=".".join (parts)      #joining both
+print("IP  Address without Zeros:",without_zeros)
+
+#Q.10 Write a python program that matches a string that has an 'a' followed by anything and ending with 's'.
+
+
+user_input=input("Enter a string:")
+
+if user_input.startswith('a') and user_input.endswith('s'):
+    print("String matches the pattern.")
+else:
+    print("String doesnot matches the pattern.")
+
+#Q.11 Replace all occurences of 6 with 'six'and 10 with 'ten' for the given string 'They ate 6 apples and 10 banana'.
+
+user_input=input("Enter a string:")
+user_input=user_input.replace('6','six')
+user_input=user_input.replace('10','ten')
+print("The replaced version is:",user_input)
+
+#Q.12 Write a program to check whether a person is eligible for voting or not('accept age from user').
+
+age=int(input("Enter the age of the person:"))
+if age>=18:
+        print("The person is eligible for voting!!!!!.")
+else:
+        print("The person is not eligible for voting!!!!!.")
+
+#Q.13 Write a program to calculate the alectricity bill(accept number of unit from user) according to the following criteria:
+#Unit              Price
+#First 100 units    no charge
+#Next 100 units      Rs 5 per unit
+#After 200 units     Rs 10 per unit
+#(For example if input unit is 350 than total bill amount is Rs.2000)
+
+units=int(input("Enter the number of units:"))
+
+if units<=100:
+    totalbill=0
+elif units<=200:
+   totalbill=(units-100)*5
+else:
+    totalbill=(100*5)+(units-200)*10
+
+    print("Total Bill Amount is:",totalbill)
+
+
+
+#Q.14 Write a program to accept percentage from the user and display according to the following criteria.
+#Marks      Grades
+#>90         A
+#>80 and <=70 B
+#>=60and <= 80 C
+#below 60      D
+
+marks_percentage=int(input("Enter the percentage of marks:"))
+if marks_percentage>90:
+    print("A Grade")
+elif marks_percentage>80 and marks_percentage<=90:
+    print("B Grade.")
+elif marks_percentage>=60 and marks_percentage <=80:
+    print("C Grade.")
+elif marks_percentage<60:
+    print("D Grade.")
+else:
+    print("Invalid Input!!!!!.")
+

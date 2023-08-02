@@ -1,0 +1,71 @@
+#1.write a function named sort_odd_even that will sort a list of numbers
+#with odd numbers coming first and then even numbers coming second.
+#you can use list.sort function
+
+def sort_odd_even(numbers):
+    odd_numbers = [num for num in numbers if num % 2 != 0]
+    even_numbers = [num for num in numbers if num % 2 == 0]
+    odd_numbers.sort()
+    even_numbers.sort()
+    sorted_numbers = odd_numbers + even_numbers
+
+    return sorted_numbers
+user_input = input("Enter a list of numbers separated by spaces: ")
+input_list = [int(num) for num in user_input.split()]
+sorted_list = sort_odd_even(input_list)
+print("Sorted list with odd numbers first and even numbers second:")
+print(sorted_list)
+
+#2.by using list comprehension,write a program to list elemnts after removing 24 from it
+#[12,24,35,24,88,120,155]
+def remove_24(input_list):
+    return [num for num in input_list if num != 24]
+input_list = [12, 24, 35, 24, 88, 120, 155]
+new_list = remove_24(input_list)
+print("Original list:", input_list)
+print("List after removing 24:", new_list)
+
+
+#3.use a list comprehension to square each odd  numbers in a list.
+#the list is input by a sequence of comma seperated numbers.
+
+def square_odd_numbers(input_list):
+    numbers = [int(num) for num in input_list.split(",")]
+    squared_odd_numbers = [num ** 2 for num in numbers if num % 2 != 0]
+    return squared_odd_numbers
+user_input = input("Enter a sequence of comma-separated numbers: ")
+squared_odd_list = square_odd_numbers(user_input)
+print("List of squared odd numbers:", squared_odd_list)
+
+
+#4.using list comprehension return the number of even integers in the given array.
+def count_even_integers(input_list):
+    numbers = [int(num) for num in input_list]
+    count_even = sum(1 for num in numbers if num % 2 == 0)
+    return count_even
+user_input = input("Enter a list of numbers separated by spaces: ")
+count_even_numbers = count_even_integers(user_input.split())
+print("Number of even integers:", count_even_numbers)
+
+
+#5 use filter to eliminate all words that are shorter than 4 letters from a list of words.
+
+def filter_short_words(words_list):
+    return list(filter(lambda word: len(word) >= 4, words_list))
+user_input = input("Enter a list of words separated by spaces: ")
+words_list = user_input.split()
+filtered_words = filter_short_words(words_list)
+print("Words with 4 or more letters:", filtered_words)
+
+#6.write a list comprension statement to convert a list of farenheit to celsius.
+def fahrenheit_to_celsius(fahrenheit_list):
+    return [(temp - 32) * 5/9 for temp in fahrenheit_list]
+
+user_input = input("Enter a list of Fahrenheit temperatures separated by spaces: ")
+fahrenheit_list = [float(temp) for temp in user_input.split()]
+celsius_list = fahrenheit_to_celsius(fahrenheit_list)
+print("Temperatures in Celsius:", celsius_list)
+
+
+
+
